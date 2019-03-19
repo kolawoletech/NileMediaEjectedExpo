@@ -7,9 +7,14 @@ import { connect } from 'react-redux';
 import { Video } from 'expo';
 import VideoPlayer from '@expo/videoplayer';
 
-
+import { VXGMobileSDK } from 'react-native-vxg-mobile-sdk';
 
 export class Player extends React.Component {
+    _url = null;
+    constructor() {
+        super();
+        this._url = 'rtsp://74c7e592-6d52-4afc-9984-d34a286580ab:@146.64.28.137:554/BigFish_PE_High_768x448_25_AAC.mm1';
+    }
     componentDidMount() {
 
     }
@@ -27,17 +32,12 @@ export class Player extends React.Component {
 
     renderVideo() {
         return (
-            <VideoPlayer
-                videoProps={{
-                    shouldPlay: true,
-                    resizeMode: Video.RESIZE_MODE_CONTAIN,
-                    source: {
-                        uri: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8'
-                    },
-                }}
-                isPortrait={true}
-                playFromPositionMillis={0}
-            />
+            <View style={styles.container}>
+                <Text>Example 1: Simple Player</Text>
+                <VXGMobileSDK
+                    style={styles.player}
+                    config={{ "connectionUrl": this._url, "autoplay": true }}></VXGMobileSDK>
+            </View>
         )
     }
 

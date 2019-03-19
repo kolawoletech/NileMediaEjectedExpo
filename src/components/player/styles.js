@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'stretch',
-    backgroundColor:'#76B6C4'
+    backgroundColor: '#76B6C4'
   },
   image: {
     width: 100,
@@ -35,5 +35,13 @@ export const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 16,
     textAlign: 'center'
-  }
+  },
+
+  player: {
+    paddingTop: 20,
+    borderWidth: 1,
+    borderColor: 'black',
+    width: 100,
+    height: 250,
+  },
 });
