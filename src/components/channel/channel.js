@@ -49,7 +49,7 @@ export class Channel extends React.Component {
                         <CardImage
                             source={{ uri: img }}
                             style={{
-                                display: 'block', maxHeight: 225, minHeight: 225, backgroundColor: 'rgba(0, 0, 0, .6)'
+                                maxHeight: 225, minHeight: 225, backgroundColor: 'rgba(0, 0, 0, .6)'
                             }}
                             resizeMode="contain"
                             title={list.name}
@@ -58,7 +58,7 @@ export class Channel extends React.Component {
 
                         <CardContent text={list.description}
                           style={{
-                            display: 'inline', maxHeight: 50, minHeight: 50
+                             maxHeight: 50, minHeight: 50
                         }} />
 
                         <View  style={styles.pills}>

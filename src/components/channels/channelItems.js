@@ -93,17 +93,17 @@ export class ChannelItems extends React.Component {
         <TouchableOpacity style={styles.item} key={data.item.id} onPress={() => Actions.channel({channelData: data.item})}>
 
           <Card>
-            <View style={{ overflow: 'auto' }}>
+            <View style={{ overflow: 'visible' }}>
               {this.state.images.length > 0 && <CardImage
               resizeMode="contain"
               
-                style={{ paddingTop: 12,position: 'absolute', float: 'left', width: 155, display: 'block', backgroundColor: '#fff' }}
+                style={{ paddingTop: 12,position: 'absolute', float: 'left', width: 155,  backgroundColor: '#fff' }}
                 source={{ uri: this.state.images.find(a => data.item.id === a.id) ? this.state.images.find(a => data.item.id === a.id).img : 'https://via.placeholder.com/150' }}
               />}
               <CardTitle
                 title={data.item.name}
                 
-                style={{ alignText: 'center', width: '60%', fontSize: 15, minHeight: 155, maxHeight: 155, marginLeft: '40%', overflow: 'auto' }}
+                style={{ alignText: 'center', width: '60%', fontSize: 15, minHeight: 155, maxHeight: 155, marginLeft: '40%' }}
               />
             </View>
 
