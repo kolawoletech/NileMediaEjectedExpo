@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "NileMediaSCIRAPI",
+    "slug": "NileMediaAPIModuleIOS",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "platforms": [
+      "ios"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icons/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F516C"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "za.co.khholdings.nilemedia-test",
+      "publishBundlePath": "ios/nilemediascirapi/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/nilemediascirapi/Supporting/shell-app-manifest.json"
+    },
+    "description": "Nile Media brings to you original African content to your mobile devices",
+    "isDetached": true,
+    "detach": {
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.10.2-sdk32.0.0-c59c23cd-1d49-49d2-a633-d03f9d554cf6.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.10.7-sdk32.0.0-3ff7f3bf-8e53-4d61-b963-1d7d92a77d79.tar.gz"
+    },
+    "scheme": "expf35e0e598fd44cc693c4df3bf66d0ed1",
+    "android": {
+      "package": "za.co.khholdings.nilemedia",
+      "publishBundlePath": "android/app/src/main/assets/shell-app.bundle",
+      "publishManifestPath": "android/app/src/main/assets/shell-app-manifest.json"
+    }
+  }
+}
