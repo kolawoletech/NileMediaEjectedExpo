@@ -21,11 +21,14 @@ export class Channel extends React.Component {
         this.props.link = null;
     }
 
+    onFetchRSTPLink = (channelID, profileID) => this.props.fetchRstpLink(channelID, profileID);
+
 
     render() {
 
         const {
-            quality: qualityList
+            quality: qualityList,
+            id: channelID
         } = this.props.channelData;
         const list = this.props.channelData;
 
@@ -76,11 +79,12 @@ export class Channel extends React.Component {
                                 <Text style={styles.text}>Watch</Text>
                             </View>
                             <View >
-                                <ChannelQuality qual={qualityList} />
+                                <ChannelQuality qual={qualityList} cid={channelID} onPressItem={this.onFetchRSTPLink}/>
                             </View>
 
                         </View>
-                        {/*                         <CardAction
+                        {/*                         
+                        <CardAction
                             separator={true}
                             inColumn={true}>
                             <CardButton
@@ -108,7 +112,7 @@ const mapStateToProps = ({ routes, apiReducer: { channel, img, link } }) => ({
 const mapDispatchToProps = {
     channelObject: fetchChannelObject,
     imageURI: fetchChannelImage,
-    fetchLink: fetchChannelRSTPLinks
+    fetchRstpLink: fetchChannelRSTPLinks
 };
 
 export default connect(

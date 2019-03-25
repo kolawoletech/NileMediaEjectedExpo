@@ -13,12 +13,19 @@ export class ChannelQuality extends React.Component {
         }
     }
     renderItem = (qualityList) => {
+        const { cid } = this.props;
+        const { onPressItem } = this.props;
         return ( 
 
-            <TouchableOpacity style={styles.item} key={qualityList.profile_id}>
-                {qualityList.profile_id === 4 && <Button onPress={Actions.player} color="white" title="LOW" />}
+            <TouchableOpacity style={styles.item} key={qualityList.profile_id} onPress={() => onPressItem(cid, qualityList.profile_id)}>
+{/*                 {qualityList.profile_id === 4 && <Button onPress={Actions.player} color="white" title="LOW" />}
                 {qualityList.profile_id === 5 && <Button onPress={Actions.player} color="white" title="MED" />}
-                {qualityList.profile_id === 6 && <Button onPress={Actions.player} color="white" title="HIGH" />}
+                {qualityList.profile_id === 6 && <Button onPress={Actions.player} color="white" title="HIGH" />} */}
+
+
+                        {qualityList.profile_id === 4 && <Text style={styles.text}> LOW</Text>}
+                        {qualityList.profile_id === 5 && <Text style={styles.text} >MED </Text>}
+                        {qualityList.profile_id === 6 && <Text style={styles.text} > HIGH </Text>}
             </TouchableOpacity>
         );
 
@@ -36,7 +43,9 @@ export class ChannelQuality extends React.Component {
             );
         } else {
             const { qual } = this.props;
+            const { cid } = this.props;
 
+            console.log("Trying to View channelID", JSON.stringify(this.props))
             return (
                 <View>
                     {this.state.images.length === 0 &&

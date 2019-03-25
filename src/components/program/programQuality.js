@@ -54,13 +54,6 @@ export class ProgramQuality extends React.Component {
         const { pid } = this.props;
         const { onPressItem } = this.props;
 
-        if (qualityList.profile_id == 7) {
-            let quality = 7;
-        }
-        //console.log(this.props)
-        //console.log(onPressItem)
-
-        //console.log(pid, qualityList.profile_id)
 
         return (
             <TouchableOpacity style={styles.item} onPress={() => onPressItem(pid, qualityList.profile_id)} key={qualityList.profile_id} >

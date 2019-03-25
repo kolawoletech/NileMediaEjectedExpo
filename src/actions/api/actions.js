@@ -295,8 +295,8 @@ export const fetchChannelRSTPLinks = (id, profile_id) => dispatch => {
                 .then(uri=> uri.json())
                 .then(uri => {
                     let link = uri["data"]
-                   // console.log("..............Getting HERE .............")
-                    //console.log(link);
+                    console.log("..............Getting HERE .............")
+                    console.log(link);
                     dispatch(channelRstpLinkLoaded(link));
                     
                 })
