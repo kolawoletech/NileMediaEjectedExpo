@@ -15,19 +15,9 @@ export class Player extends React.Component {
         super();
         this._url = 'rtsp://74c7e592-6d52-4afc-9984-d34a286580ab:@146.64.28.137:554/BigFish_PE_High_768x448_25_AAC.mm1';
     }
-    componentDidMount() {
 
-    }
 
     componentDidMount() {
-        //this.props.channel;
-        //console.log("THIS FOOL "+this.props.channel)
-        //this.callApi()
-
-        //const channel = this.props;
-
-        //console.log(channel.id)
-        //this.props.channelObject(channel.id);
     }
 
     renderVideo() {
@@ -42,10 +32,7 @@ export class Player extends React.Component {
     }
 
     render() {
-
-
-
-        //console.log("This IS THE QUALITY NODE " + {quality})
+        console.log({obj: this.props});
         const channel_details = this.chan;
         if (this.props == "undefined") {
             return (
@@ -54,7 +41,6 @@ export class Player extends React.Component {
                 </View>
             );
         } else {
-            //const { list } = this.props;
 
             return (
                 <View style={styles.container}>
@@ -70,12 +56,10 @@ export class Player extends React.Component {
 
 const mapStateToProps = ({ routes, apiReducer: { channel } }) => ({
     routes: routes,
-    //token: token,
     channel: channel
 });
 
 const mapDispatchToProps = {
-    //videoObject: fetchVideoObject
 };
 
 export default connect(

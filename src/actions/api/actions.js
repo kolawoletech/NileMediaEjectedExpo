@@ -259,7 +259,51 @@ export const fetchProgramURILinks = (id, profile_id) => dispatch => {
        // .catch(err => console.log("An error occured", err))
 }
 
+export const fetchChannelRSTPLinks = (id, profile_id) => dispatch => {
 
+    dispatch(apiUserRegistering());
+
+    const options = {
+        method: 'POST',
+        body: "aid=c90bf2be-459b-46bd-9ac5-0693f07d54ac",
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    };
+
+    const url = 'https://nile.rtst.co.za/api/artist/6/tokens';
+    fetch(url, options)
+        .then(token_data => token_data.json())
+        .then(token_data => {
+
+            dispatch(apiUserRegistered(token_data["data"]));
+            //console.log("This is TOKEN from STORE "+ token_data["data"]);
+            const programs_options = {
+                method: 'GET',
+
+                headers: new Headers({
+                    'Authorization': 'Bearer ' + token_data["data"],
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                })
+            };
+
+            //dispatch(channelLoading(id))
+            //console.log("ID USED IN STORE IS "  + id)
+            const program_url = 'https://nile.rtst.co.za/api/artist/6/channels/' + id + '/uri/' + profile_id + '/';
+
+            fetch(program_url, programs_options)
+                .then(uri=> uri.json())
+                .then(uri => {
+                    let link = uri["data"]
+                   // console.log("..............Getting HERE .............")
+                    //console.log(link);
+                    dispatch(channelRstpLinkLoaded(link));
+                    
+                })
+        })
+
+       // .catch(err => console.log("An error occured", err))
+}
 
 export const fetchCatalogue = () => dispatch => {
     dispatch(apiUserRegistering());
@@ -349,6 +393,11 @@ const catalogueLoaded = (catalogue) => ({
 
 const programUriLinkLoaded= (link) => ({
     type: types.CATALOGUE_URI_LINK_LOADED,
+    link
+});
+
+const channelRstpLinkLoaded= (link) => ({
+    type: types.CHANNEL_RSTP_LINK_LOADED,
     link
 });
 

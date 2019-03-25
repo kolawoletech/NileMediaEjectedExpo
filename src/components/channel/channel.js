@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text, StyleSheet, FlatList, Image } from 'react
 import { styles } from './styles';
 
 import { connect } from 'react-redux';
-import { fetchChannelObject, fetchChannelImage } from '../../actions/api/actions';
+import { fetchChannelObject, fetchChannelImage , fetchChannelRSTPLinks} from '../../actions/api/actions';
 import { ChannelQuality } from './channelQuality';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator';
 
@@ -18,6 +18,7 @@ export class Channel extends React.Component {
         const channel = this.props.channelData;
         this.props.channelObject(channel.id);
         this.props.imageURI(channel.id)
+        this.props.link = null;
     }
 
 
@@ -36,7 +37,7 @@ export class Channel extends React.Component {
                 </View>
             );
         } else {
-           // console.log(this.props)
+            // console.log(this.props)
             let { img } = this.props;
 
             return (
@@ -57,12 +58,11 @@ export class Channel extends React.Component {
 
 
                         <CardContent text={list.description}
-                          style={{
-                             maxHeight: 50, minHeight: 50
-                        }} />
-
-                        <View  style={styles.pills}>
-{/*                             <View>
+                            style={{
+                                maxHeight: 50, minHeight: 50
+                            }} />
+                        <View style={styles.pills}>
+                            {/*                             <View>
                                 <CardButton
                                     onPress={() => { }}
                                     title="Watch"
@@ -73,14 +73,14 @@ export class Channel extends React.Component {
                                 />
                             </View> */}
                             <View>
-                                    <Text style={styles.text}>Watch</Text>
-                                </View>
+                                <Text style={styles.text}>Watch</Text>
+                            </View>
                             <View >
                                 <ChannelQuality qual={qualityList} />
                             </View>
 
                         </View>
-{/*                         <CardAction
+                        {/*                         <CardAction
                             separator={true}
                             inColumn={true}>
                             <CardButton
@@ -98,7 +98,7 @@ export class Channel extends React.Component {
     }
 }
 
-const mapStateToProps = ({ routes, apiReducer: { channel, img } }) => ({
+const mapStateToProps = ({ routes, apiReducer: { channel, img, link } }) => ({
     routes: routes,
     //token: token,
     channel: channel,
@@ -107,7 +107,8 @@ const mapStateToProps = ({ routes, apiReducer: { channel, img } }) => ({
 
 const mapDispatchToProps = {
     channelObject: fetchChannelObject,
-    imageURI: fetchChannelImage
+    imageURI: fetchChannelImage,
+    fetchLink: fetchChannelRSTPLinks
 };
 
 export default connect(

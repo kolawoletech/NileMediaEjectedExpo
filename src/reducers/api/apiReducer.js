@@ -115,6 +115,19 @@ const apiReducer = (state = initialState, action) => {
           link: action.link
         };
 
+
+        case types.CHANNEL_RSTP_LINK_LOADED:
+        return {
+          ...state,
+          connecting: false,
+          loading: false,
+          token: action.token,
+          error: null,
+          loaded: true,
+          //TODO Might changed link to rstp or something else if there is  a  race condition
+          link: action.link
+        };
+
         case types.CHANNEL_IMAGE_URI_LOADED:
         return {
           ...state,

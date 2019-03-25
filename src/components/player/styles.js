@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     paddingTop: 20,
     borderWidth: 1,
     borderColor: 'black',
-    width: 100,
+    width: '100%',
     height: 250,
   },
 });

@@ -13,12 +13,12 @@ export class ChannelQuality extends React.Component {
         }
     }
     renderItem = (qualityList) => {
-        return (
+        return ( 
 
             <TouchableOpacity style={styles.item} key={qualityList.profile_id}>
-                {qualityList.profile_id === 1 && <Button onPress={Actions.player} color="white" title="LOW" />}
-                {qualityList.profile_id === 2 && <Button onPress={Actions.player} color="white" title="MED" />}
-                {qualityList.profile_id === 3 && <Button onPress={Actions.player} color="white" title="HIGH" />}
+                {qualityList.profile_id === 4 && <Button onPress={Actions.player} color="white" title="LOW" />}
+                {qualityList.profile_id === 5 && <Button onPress={Actions.player} color="white" title="MED" />}
+                {qualityList.profile_id === 6 && <Button onPress={Actions.player} color="white" title="HIGH" />}
             </TouchableOpacity>
         );
 
