@@ -53,7 +53,7 @@ PODS:
     - EXCore
     - EXFileSystemInterface
     - EXPermissionsInterface
-  - EXCore (2.0.0)
+  - EXCore (2.0.2)
   - EXErrors (1.0.0):
     - EXCore
   - EXFaceDetectorInterface (2.0.0):
@@ -196,9 +196,20 @@ PODS:
   - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
   - GTMSessionFetcher/Core (1.2.1)
   - JKBigInteger2 (0.0.5)
+  - KSYMediaPlayer_iOS (3.0.3):
+    - KSYMediaPlayer_iOS/KSYMediaPlayer_live (= 3.0.3)
+  - KSYMediaPlayer_iOS/KSYMediaPlayer_live (3.0.3)
   - lottie-ios (2.5.3)
   - React (0.57.1):
     - React/Core (= 0.57.1)
+  - react-native-ksyvideo (2.0.0):
+    - KSYMediaPlayer_iOS
+    - React
+  - react-native-video (4.4.0):
+    - React
+    - react-native-video/Video (= 4.4.0)
+  - react-native-video/Video (4.4.0):
+    - React
   - React/ART (0.57.1):
     - React/Core
   - React/Core (0.57.1):
@@ -245,6 +256,8 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - RNVectorIcons (6.4.1):
+    - React
   - yoga (0.57.1.React)
 
 DEPENDENCIES:
@@ -288,6 +301,8 @@ DEPENDENCIES:
   - EXTaskManagerInterface (from `../node_modules/expo-task-manager-interface/ios`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - react-native-ksyvideo (from `../node_modules/react-native-ksyvideo`)
+  - react-native-video (from `../node_modules/react-native-video`)
   - React/ART (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
@@ -301,6 +316,7 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -325,6 +341,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - JKBigInteger2
+    - KSYMediaPlayer_iOS
     - lottie-ios
 
 EXTERNAL SOURCES:
@@ -411,6 +428,12 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
+  react-native-ksyvideo:
+    :path: "../node_modules/react-native-ksyvideo"
+  react-native-video:
+    :path: "../node_modules/react-native-video"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -480,10 +503,14 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   JKBigInteger2: e91672035c42328c48b7dd015b66812ddf40ca9b
+  KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  react-native-ksyvideo: 9cc7c002cf61f6ec04d53a11bcaedec14bb5a3c5
+  react-native-video: 44c6befbc1526283ca1919891fcebe4680feade4
+  RNVectorIcons: 8c52e1e8da1153613fdef44748e865c25556cb9c
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 9abf6309b232ab00a1b14232c6929b32831e7139
+PODFILE CHECKSUM: 1803753016f009dbfe31eed0f76c93de2c73da88
 
 COCOAPODS: 1.5.3

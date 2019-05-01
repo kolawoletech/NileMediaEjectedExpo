@@ -114,6 +114,7 @@ target 'nilemediascirapi' do
     :inhibit_warnings => true
 
 
+  
   pod 'react-native-ksyvideo', :path => '../node_modules/react-native-ksyvideo'
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
